@@ -1,0 +1,43 @@
+#c {
+  background-color: green
+}
+
+#d {
+  background-color: blue 
+}
+
+#e {
+  background-color: purple 
+}
+
+#f {
+  background-color: red 
+}
+
+#g {
+  background-color: orange
+}
+
+#a {
+  background-color: yellow
+}
+
+#b {
+  background-color: pink
+}
+
+#c5 {
+  background-color: lightblue
+}
+
+#notes_table td{
+  height: 150px;
+  width: 80px;
+}
+
+#notes_container{
+    margin: auto;
+    position: relative;
+    width: 50%;
+    top: 200px;
+}

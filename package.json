@@ -1,0 +1,17 @@
+{
+  "name": "jsvco",
+  "version": "1.0.0",
+  "description": "A virtual V.C.O. (voltage controlled oscillator) build with Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cory Mathis",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "jQuery": "^1.7.4"
+  },"engines": {
+    "node": "7.2.1"
+  }
+}
