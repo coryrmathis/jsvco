@@ -1,3 +1,4 @@
+
 var Instrument = function(){
 
   var context = new (window.AudioContext || window.webkitAudioContext)();
@@ -121,18 +122,9 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $("#keychoice").hide()
-  $("#keybutton").on("click", function(){
-    $(this).hide()
-    $("#keychoice").show()
-  });
-
-
   $(".majorkey").on("click", function(event){
     keyNum = parseInt($("#keychoice input[type='radio']:checked").val())
     currentInstrument.start(keyNum)
-    $("#keychoice").hide()
-    $("#keybutton").show()
   })
 });
 

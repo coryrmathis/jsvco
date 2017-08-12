@@ -2,43 +2,58 @@
 <html>
 <head>
   <title>J.S.V.C.O.</title>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/normalize.css">
   <link rel="stylesheet" href="/stylesheets/application.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="application.js" ></script>
 
 </head>
 <body>
-
-  <h1>J.S.V.C.O.</h1>
-  <div id="notes_container">
-  <table id="notes_table">
-    <tr>
-      <td id="c"></td>
-      <td id="d"></td>
-      <td id="e"></td>
-      <td id="f"></td>
-      <td id="g"></td>
-      <td id="a"></td>
-      <td id="b"></td>
-      <td id="c5"></td>
-    </tr>
-  </table>
-  <button id="keybutton">Choose A Key</button>
-  <form id="keychoice" method="get" action="/">
-    <input class="majorkey" type="radio" class="key" name="key" value="0">C Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="1">C# Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="2">D Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="3">D# Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="4">E Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="5">F Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="6">F# Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="7">G Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="8">G# Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="9">A Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="10">A# Major<br>
-    <input class="majorkey" type="radio" class="key" name="key" value="11">B Major<br>
-  </form>
-</div>
+  <div id="app-header">
+    <h1>J.S.V.C.O.</h1>
+  </div>
+  <div id="options-container">
+    <h3>Options</h3>
+    <div class="dropdown">
+      <button class="btn btn-primary btn-sm" id="keyChoiceBtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Choose A Key
+      </button>
+      <div class="dropdown-menu">
+        <form id="keychoiceForm" method="get" action="/">
+          <input class="majorkey" type="radio" class="key" name="key" value="0" checked>C Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="1">C# Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="2">D Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="3">D# Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="4">E Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="5">F Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="6">F# Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="7">G Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="8">G# Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="9">A Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="10">A# Major<br>
+          <input class="majorkey" type="radio" class="key" name="key" value="11">B Major<br>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div id="notes-container">
+    <table id="notes-table">
+      <tr>
+        <td id="c">A</td>
+        <td id="d">S</td>
+        <td id="e">D</td>
+        <td id="f">F</td>
+        <td id="g">J</td>
+        <td id="a">K</td>
+        <td id="b">L</td>
+        <td id="c5">;</td>
+      </tr>
+    </table>
+  </div>
 </body>
 </html>
