@@ -13,29 +13,20 @@ var Instrument = function(){
     return {oscillator, gainNode, context}
   };
 
-  var playNote = function(noteName){
-    noteName.gainNode.gain.value = 1
+  var playNote = function(noteName, volume){
+    noteName.gainNode.gain.value = volume
     noteName.oscillator.start()
-    // noteName.gainNode.gain.linearRampToValueAtTime(1, context.currentTime + .3)
+    
     noteName.gainNode.gain.linearRampToValueAtTime(0, context.currentTime + .5)
-    // for (var i = .9 ; i >= 0; i -= .1) {
-    //   noteName.gainNode.gain.setValueAtTime(i, noteName.context.currentTime + .2)
-    // }
   };
 
-  var listenOn = function(id, frequency, letterKey, waveForm){
-      
-    $(id).on("click", function(event){
-      var note = setupNote(frequency, waveForm)
-      playNote(note)
-      // $(id).animate({ opacity: 0.2 }, 1200, 'linear')
-
-    })
+  var listenOn = function(id, frequency, letterKey, waveForm, volume){
+  
     
     $(document).keydown(function(event){
       if (event.key == letterKey){
         var note = setupNote(frequency, waveForm)
-        playNote(note)
+        playNote(note, volume)
         $(id).animate({ opacity: 0.2 }, 100, 'linear', function(){
           $(this).animate({ opacity: 1 }, 100, 'linear')
         })
@@ -86,26 +77,26 @@ var Instrument = function(){
   };  
   
 
-  this.start = function(keyNum, waveForm){
+  this.start = function(keyNum, waveForm, volume = 1){
     var currentKey = findMajorKey(keyNum)
 
     $(document).off("keydown")
     $("#c").off()
-    listenOn("#c", currentKey[0], "a", waveForm)
+    listenOn("#c", currentKey[0], "a", waveForm, volume)
     $("#d").off()
-    listenOn("#d", currentKey[1], "s", waveForm)
+    listenOn("#d", currentKey[1], "s", waveForm, volume)
     $("#e").off()
-    listenOn("#e", currentKey[2], "d", waveForm)
+    listenOn("#e", currentKey[2], "d", waveForm, volume)
     $("#f").off()
-    listenOn("#f", currentKey[3], "f", waveForm)
+    listenOn("#f", currentKey[3], "f", waveForm, volume)
     $("#g").off()
-    listenOn("#g", currentKey[4], "j", waveForm)
+    listenOn("#g", currentKey[4], "j", waveForm, volume)
     $("#a").off()
-    listenOn("#a", currentKey[5], "k", waveForm)
+    listenOn("#a", currentKey[5], "k", waveForm, volume)
     $("#b").off()
-    listenOn("#b", currentKey[6], "l", waveForm)
+    listenOn("#b", currentKey[6], "l", waveForm, volume)
     $("#c5").off()
-    listenOn("#c5",currentKey[7], ";", waveForm)
+    listenOn("#c5",currentKey[7], ";", waveForm, volume)
   }
 
 }
@@ -118,13 +109,22 @@ $(document).ready(function(){
   $(".majorkey").on("click", function(event){
     keyNum = parseInt($("#keychoiceForm input[type='radio']:checked").val())
     waveForm = $("#waveFormChoiceForm input[type='radio']:checked").val()
-    currentInstrument.start(keyNum, waveForm)
+    volume = parseInt($("#volumeChoiceForm input[type='range']").val()) / 10
+    currentInstrument.start(keyNum, waveForm, volume)
   })
 
   $(".waveForm").on("click", function(event){
     keyNum = parseInt($("#keychoiceForm input[type='radio']:checked").val())
     waveForm = $("#waveFormChoiceForm input[type='radio']:checked").val()
-    currentInstrument.start(keyNum, waveForm)
+    volume = parseInt($("#volumeChoiceForm input[type='range']").val()) / 10
+    currentInstrument.start(keyNum, waveForm, volume)
+  })
+
+  $("#volumeSlider").on("change", function(event){
+    keyNum = parseInt($("#keychoiceForm input[type='radio']:checked").val())
+    waveForm = $("#waveFormChoiceForm input[type='radio']:checked").val()
+    volume = parseInt($("#volumeChoiceForm input[type='range']").val()) / 10
+    currentInstrument.start(keyNum, waveForm, volume)
   })
 });
 
