@@ -18,11 +18,13 @@ body{
 
 }
 
-#keychoiceForm {
+.dropDownForm {
   padding: 3%;
 }
 
-#keychoiceForm input[type="radio"]{
+
+
+.dropDownForm input[type="radio"]{
   margin-right: 5px;
 }
 

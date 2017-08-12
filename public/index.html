@@ -17,12 +17,12 @@
   </div>
   <div id="options-container">
     <h3>Options</h3>
-    <div class="dropdown">
+    <span class="dropdown">
       <button class="btn btn-primary btn-sm" id="keyChoiceBtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Choose A Key
       </button>
       <div class="dropdown-menu">
-        <form id="keychoiceForm" method="get" action="/">
+        <form class="dropDownForm" id="keychoiceForm" method="get" action="/">
           <input class="majorkey" type="radio" class="key" name="key" value="0" checked>C Major<br>
           <input class="majorkey" type="radio" class="key" name="key" value="1">C# Major<br>
           <input class="majorkey" type="radio" class="key" name="key" value="2">D Major<br>
@@ -37,8 +37,19 @@
           <input class="majorkey" type="radio" class="key" name="key" value="11">B Major<br>
         </form>
       </div>
-    </div>
-    
+    </span>
+    <span class="dropdown">
+      <button class="btn btn-primary btn-sm" id="waveFormChoiceBtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Waveform
+      </button> 
+      <div class="dropdown-menu">
+        <form class="dropDownForm" id="waveFormChoiceForm">
+          <input class="waveForm" type="radio" name="waveForm" value="sine" checked>Sine<br>
+          <input class="waveForm" type="radio" name="waveForm" value="sawtooth">Sawtooth<br>
+          <input class="waveForm" type="radio" name="waveForm" value="square">Square<br>
+        </form>
+      </div>
+    </span>
   </div>
   
   <div id="notes-container">
