@@ -30,8 +30,16 @@ var Instrument = function(){
         $(id).animate({ opacity: 0.2 }, 100, 'linear', function(){
           $(this).animate({ opacity: 1 }, 100, 'linear')
         })
-     };
+      };
     });
+
+    $(document).on("click", id, function(){
+      var note = setupNote(frequency, waveForm)
+      playNote(note, volume)
+      $(id).animate({ opacity: 0.2 }, 100, 'linear', function(){
+        $(this).animate({ opacity: 1 }, 100, 'linear')
+      })
+    })
   };
 
 // Starts on C3.
@@ -101,30 +109,28 @@ var Instrument = function(){
 
 }
 
+function go(){
+  keyNum = parseInt($("#keychoiceForm input[type='radio']:checked").val())
+  waveForm = $("#waveFormChoiceForm input[type='radio']:checked").val()
+  volume = parseInt($("#volumeChoiceForm input[type='range']").val()) / 10
+  currentInstrument.start(keyNum, waveForm, volume)
+}
+
 var currentInstrument = new Instrument
 currentInstrument.start(0)
 
 
 $(document).ready(function(){
   $(".majorkey").on("click", function(event){
-    keyNum = parseInt($("#keychoiceForm input[type='radio']:checked").val())
-    waveForm = $("#waveFormChoiceForm input[type='radio']:checked").val()
-    volume = parseInt($("#volumeChoiceForm input[type='range']").val()) / 10
-    currentInstrument.start(keyNum, waveForm, volume)
+    go()
   })
 
   $(".waveForm").on("click", function(event){
-    keyNum = parseInt($("#keychoiceForm input[type='radio']:checked").val())
-    waveForm = $("#waveFormChoiceForm input[type='radio']:checked").val()
-    volume = parseInt($("#volumeChoiceForm input[type='range']").val()) / 10
-    currentInstrument.start(keyNum, waveForm, volume)
+    go()
   })
 
   $("#volumeSlider").on("change", function(event){
-    keyNum = parseInt($("#keychoiceForm input[type='radio']:checked").val())
-    waveForm = $("#waveFormChoiceForm input[type='radio']:checked").val()
-    volume = parseInt($("#volumeChoiceForm input[type='range']").val()) / 10
-    currentInstrument.start(keyNum, waveForm, volume)
+    go()
   })
 });
 

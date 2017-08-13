@@ -5,17 +5,20 @@
   <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/normalize.css">
   <link rel="stylesheet" href="/stylesheets/application.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="application.js" ></script>
 
 </head>
 <body>
+
   <div id="app-header">
     <h1>J.S.V.C.O.</h1>
     <h3>Javascript Voltage Controlled Oscillator</h3>
-    <p>A real voltage controlled oscillator uses modulates electrical signals and transforms them into sound.  This is a simple replica built using Javascript.  Use the keyboard keys printed below to play the instrument.</p>
+    <p>A real voltage controlled oscillator uses modulates electrical signals and transforms them into sound.  This is a simple replica built using Javascript.  Use the keyboard keys printed below (or your mouse) to play the instrument.</p>
   </div>
   <h3 id="options-header">Options</h3>
   <div id="options-container">
@@ -67,14 +70,54 @@
   <div id="notes-container">
     <table id="notes-table">
       <tr>
-        <td id="c">A</td>
-        <td id="d">S</td>
-        <td id="e">D</td>
-        <td id="f">F</td>
-        <td id="g">J</td>
-        <td id="a">K</td>
-        <td id="b">L</td>
-        <td id="c5">;</td>
+        <td id="c">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <div class="fa-stack-1x">A</div>
+          </span>
+        </td>
+        <td id="d">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <div class="fa-stack-1x">S</div>
+          </span>
+        </td>
+        <td id="e">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <div class="fa-stack-1x">D</div>
+          </span>
+        </td>
+        <td id="f">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <div class="fa-stack-1x">F</div>
+          </span>
+        </td>
+        <td id="g">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <div class="fa-stack-1x">J</div>
+          </span>
+        </td>
+        <td id="a">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <div class="fa-stack-1x">K</div>
+          </span>
+        </td>
+        <td id="b">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <div class="fa-stack-1x">L</div>
+          </span>
+        </td>
+        <td id="c5">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <div class="fa-stack-1x">;</div>
+          </span>
+        </td>
       </tr>
     </table>
   </div>
